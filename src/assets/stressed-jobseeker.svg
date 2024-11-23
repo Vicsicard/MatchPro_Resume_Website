@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F8F9FA" x="0" y="0" width="800" height="600"/>
+        <g transform="translate(100, 50)">
+            <!-- Person -->
+            <g transform="translate(200, 100)">
+                <!-- Head -->
+                <circle fill="#4A5568" cx="150" cy="100" r="60"/>
+                <!-- Stressed Expression -->
+                <path d="M120,90 Q150,70 180,90" stroke="#FFFFFF" stroke-width="4" fill="none"/>
+                <line x1="130" y1="110" x2="170" y2="110" stroke="#FFFFFF" stroke-width="4"/>
+                <!-- Hand on Head -->
+                <path d="M190,60 Q210,40 230,60" stroke="#4A5568" stroke-width="15" fill="none"/>
+            </g>
+            <!-- Laptop -->
+            <g transform="translate(150, 200)">
+                <rect fill="#4A90E2" x="50" y="0" width="200" height="120" rx="8"/>
+                <path d="M25,120 L275,120 L300,170 L0,170 Z" fill="#2D3748"/>
+            </g>
+            <!-- Floating Elements -->
+            <g fill="#E53E3E">
+                <!-- Rejection Letters -->
+                <rect x="50" y="50" width="80" height="40" rx="4" opacity="0.6"/>
+                <rect x="400" y="80" width="80" height="40" rx="4" opacity="0.6"/>
+                <rect x="350" y="300" width="80" height="40" rx="4" opacity="0.6"/>
+                <!-- Stress Symbols -->
+                <text font-family="Arial" font-size="40" font-weight="bold">
+                    <tspan x="80" y="250">!</tspan>
+                </text>
+                <text font-family="Arial" font-size="40" font-weight="bold">
+                    <tspan x="420" y="200">!</tspan>
+                </text>
+                <text font-family="Arial" font-size="40" font-weight="bold">
+                    <tspan x="380" y="150">!</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

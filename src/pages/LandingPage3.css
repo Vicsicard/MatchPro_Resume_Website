@@ -1,0 +1,104 @@
+.landing-page-3 {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-gray-light));
+}
+
+.solution-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
+  animation: fadeIn 1s ease-out 0.4s both;
+}
+
+.showcase-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.showcase-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.showcase-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.showcase-content h3 {
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.showcase-content p {
+  color: var(--color-text);
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.pricing-preview {
+  margin: var(--spacing-xl) 0;
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.pricing-card {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+  background: var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.pricing-card h3 {
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-xl);
+}
+
+.features-list li {
+  padding: var(--spacing-sm) 0;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.features-list li::before {
+  content: "✓";
+  color: var(--color-success);
+  margin-right: var(--spacing-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .solution-showcase {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .showcase-item {
+    padding: var(--spacing-md);
+  }
+
+  .pricing-card {
+    padding: var(--spacing-lg);
+  }
+}

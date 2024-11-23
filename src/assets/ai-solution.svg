@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F8F9FA" x="0" y="0" width="800" height="600"/>
+        <g transform="translate(100, 50)">
+            <!-- Brain Icon -->
+            <g transform="translate(200, 100)">
+                <circle fill="#48BB78" cx="150" cy="150" r="120"/>
+                <path d="M150,50 C200,50 240,90 240,140 C240,190 200,230 150,230" stroke="#FFFFFF" stroke-width="15"/>
+                <path d="M150,50 C100,50 60,90 60,140 C60,190 100,230 150,230" stroke="#FFFFFF" stroke-width="15"/>
+                <circle fill="#FFFFFF" cx="120" cy="120" r="15"/>
+                <circle fill="#FFFFFF" cx="180" cy="120" r="15"/>
+            </g>
+            <!-- Circuit Lines -->
+            <g stroke="#48BB78" stroke-width="4">
+                <line x1="0" y1="100" x2="150" y2="100"/>
+                <line x1="0" y1="200" x2="150" y2="200"/>
+                <line x1="0" y1="300" x2="150" y2="300"/>
+                <line x1="450" y1="100" x2="600" y2="100"/>
+                <line x1="450" y1="200" x2="600" y2="200"/>
+                <line x1="450" y1="300" x2="600" y2="300"/>
+            </g>
+            <!-- Circuit Nodes -->
+            <g fill="#48BB78">
+                <circle cx="150" cy="100" r="6"/>
+                <circle cx="150" cy="200" r="6"/>
+                <circle cx="150" cy="300" r="6"/>
+                <circle cx="450" cy="100" r="6"/>
+                <circle cx="450" cy="200" r="6"/>
+                <circle cx="450" cy="300" r="6"/>
+            </g>
+        </g>
+    </g>
+</svg>

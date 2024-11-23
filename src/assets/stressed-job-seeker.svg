@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F5F5F5"/>
+  
+  <!-- Desk -->
+  <rect x="100" y="400" width="600" height="20" fill="#8B4513"/>
+  <rect x="150" y="420" width="50" height="180" fill="#8B4513"/>
+  <rect x="600" y="420" width="50" height="180" fill="#8B4513"/>
+  
+  <!-- Laptop -->
+  <rect x="300" y="350" width="200" height="120" rx="10" fill="#333333"/>
+  <rect x="320" y="370" width="160" height="80" fill="#1A73E8"/>
+  
+  <!-- Papers -->
+  <rect x="520" y="360" width="80" height="100" transform="rotate(-10 520 360)" fill="white"/>
+  <rect x="540" y="380" width="40" height="5" transform="rotate(-10 540 380)" fill="#333333"/>
+  <rect x="540" y="390" width="30" height="5" transform="rotate(-10 540 390)" fill="#333333"/>
+  
+  <!-- Person -->
+  <circle cx="400" cy="250" r="50" fill="#FB8C00"/> <!-- Head -->
+  <path d="M 400 300 Q 400 400 400 450" stroke="#FB8C00" stroke-width="20"/> <!-- Body -->
+  <path d="M 400 350 L 350 400" stroke="#FB8C00" stroke-width="20"/> <!-- Left arm -->
+  <path d="M 400 350 L 450 400" stroke="#FB8C00" stroke-width="20"/> <!-- Right arm -->
+  
+  <!-- Stress lines -->
+  <path d="M 460 200 L 480 180" stroke="#333333" stroke-width="3"/>
+  <path d="M 470 180 L 490 200" stroke="#333333" stroke-width="3"/>
+  <path d="M 320 200 L 340 180" stroke="#333333" stroke-width="3"/>
+  <path d="M 330 180 L 350 200" stroke="#333333" stroke-width="3"/>
+</svg>
