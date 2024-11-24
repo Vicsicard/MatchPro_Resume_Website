@@ -142,7 +142,7 @@ function ResumeBuilder() {
   };
 
   return (
-    <div className="content-section">
+    <div className="main-content">
       <div className="resume-builder">
         <div className="sidebar">
           {Object.entries(sections).map(([key, { title, icon }]) => (

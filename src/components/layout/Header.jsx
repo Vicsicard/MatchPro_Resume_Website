@@ -1,24 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from '../../lib/supabase';
 import './Header.css';
 
 const Header = () => {
-  return (
-    <header className="header">
-      <div className="header-content">
-        <Link to="/" className="logo">
-          MatchProResume
-        </Link>
-        
-        <nav className="nav-links">
-          <Link to="/resume-builder">Resume Builder</Link>
-          <Link to="/job-search">Job Search</Link>
-        </nav>
+  const [user, setUser] = React.useState(null);
 
-        <div className="auth-links">
-          <Link to="/login" className="login-btn">Login</Link>
-          <Link to="/signup" className="signup-btn">Sign Up</Link>
-        </div>
+  React.useEffect(() => {
+    // Get current user
+    auth.getUser().then(({ user: currentUser }) => {
+      setUser(currentUser);
+    });
+  }, []);
+
+  return (
+    <header className="main-header">
+      <div className="container">
+        <div className="header-spacer"></div>
+        <h1>Welcome to MatchPro Resume</h1>
+        {!user && (
+          <div className="header-buttons">
+            <Link to="/login" className="header-button">Login</Link>
+            <Link to="/signup" className="header-button primary">Sign Up</Link>
+          </div>
+        )}
       </div>
     </header>
   );

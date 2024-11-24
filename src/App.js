@@ -11,13 +11,13 @@ import LandingPage1 from './pages/LandingPage1';
 import LandingPage2 from './pages/LandingPage2';
 import LandingPage3 from './pages/LandingPage3';
 import MainHomepage from './pages/MainHomepage';
-import ResumeBuilder from './pages/ResumeBuilder';
+import ResumeBuilder from './pages/ResumeBuilder/ResumeBuilder';  
 import JobSearch from './pages/JobSearch';
 import Profile from './pages/Profile';
 import Login from './pages/auth/Login';
 import SignUp from './pages/auth/SignUp';
 
-// Layout wrapper to conditionally render header/footer
+// Layout wrapper
 const Layout = ({ children }) => {
   const location = useLocation();
   const isLandingPage = ['/landing1', '/landing2', '/landing3'].includes(location.pathname);
@@ -46,7 +46,7 @@ function App() {
           
           {/* Main Application Routes */}
           <Route path="/home" element={<MainHomepage />} />
-          <Route path="/resume-builder" element={<ResumeBuilder />} />
+          <Route path="/matchproresumebuilder" element={<ResumeBuilder />} />
           <Route path="/job-search" element={<JobSearch />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />

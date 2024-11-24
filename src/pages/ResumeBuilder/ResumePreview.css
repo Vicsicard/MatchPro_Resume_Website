@@ -1,0 +1,151 @@
+.resume-preview {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.preview-header {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-button,
+.download-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.edit-button:hover {
+  background-color: #dee2e6;
+}
+
+.download-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.download-button:hover {
+  background-color: #218838;
+}
+
+.resume-document {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 3rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.resume-header h1 {
+  margin: 0 0 1rem;
+  color: #333;
+  font-size: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  color: #495057;
+}
+
+.resume-section {
+  margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+  color: #007bff;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.experience-item,
+.education-item {
+  margin-bottom: 1.5rem;
+}
+
+.experience-header {
+  margin-bottom: 0.5rem;
+}
+
+.experience-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.company {
+  color: #495057;
+  font-weight: 500;
+  margin: 0.25rem 0;
+}
+
+.date {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.description {
+  color: #495057;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+}
+
+.education-item h3 {
+  margin: 0 0 0.25rem;
+  color: #333;
+}
+
+.education-item p {
+  margin: 0.25rem 0;
+  color: #495057;
+}
+
+/* Print styles */
+@media print {
+  .preview-header {
+    display: none;
+  }
+
+  .resume-preview {
+    padding: 0;
+    background-color: white;
+  }
+
+  .resume-document {
+    box-shadow: none;
+    padding: 0;
+    max-width: none;
+  }
+}

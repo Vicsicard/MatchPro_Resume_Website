@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { auth } from '../../lib/supabase';
-import { useMonitoring } from '../../hooks/useMonitoring';
 import './Auth.css';
 
 function SignUp() {
   const navigate = useNavigate();
-  const { trackError, trackMetric } = useMonitoring();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -15,7 +13,6 @@ function SignUp() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    const startTime = performance.now();
 
     try {
       setLoading(true);
@@ -35,16 +32,11 @@ function SignUp() {
       });
 
       if (signUpError) throw signUpError;
-
-      // Track successful signup
-      trackMetric('signup_success', 1, { method: 'email' });
-      trackMetric('auth_response_time', performance.now() - startTime, { action: 'signup' });
       
       navigate('/auth/verify-email', { 
         state: { email } 
       });
     } catch (err) {
-      trackError(err, 'AUTH_ERROR', 'high');
       setError(err.message);
     } finally {
       setLoading(false);
@@ -52,75 +44,48 @@ function SignUp() {
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-container">
-        <div className="auth-card">
-          <h1>Create Account</h1>
-          <p className="auth-subtitle">Join MatchPro Resume to start your journey</p>
-
-          {error && (
-            <div className="error-message">
-              {error}
-            </div>
-          )}
-
-          <form onSubmit={handleSignUp} className="auth-form">
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Create a password"
-                required
-                minLength={6}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input
-                id="confirmPassword"
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Confirm your password"
-                required
-                minLength={6}
-              />
-            </div>
-
-            <button 
-              type="submit" 
-              className="btn btn-primary btn-large btn-block"
-              disabled={loading}
-            >
-              {loading ? 'Creating Account...' : 'Create Account'}
-            </button>
-          </form>
-
-          <div className="auth-footer">
-            <p>
-              Already have an account?{' '}
-              <Link to="/auth/login" className="auth-link">
-                Sign In
-              </Link>
-            </p>
+    <div className="auth-container">
+      <div className="auth-box">
+        <h1>Sign Up</h1>
+        {error && <div className="error-message">{error}</div>}
+        <form onSubmit={handleSignUp}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
-        </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Signing up...' : 'Sign Up'}
+          </button>
+        </form>
+        <p className="auth-link">
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
       </div>
     </div>
   );

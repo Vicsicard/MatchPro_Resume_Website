@@ -19,7 +19,7 @@ function LandingPage3() {
           className="hero-image"
         />
         <h1 className="pain-point">
-          Let AI Be Your Career Navigator
+          Let MatchPro Resume Be Your Career Navigator
         </h1>
         <button onClick={handleNext} className="solution-button">
           Get Started
