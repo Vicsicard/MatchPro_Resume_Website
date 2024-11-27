@@ -43,7 +43,7 @@ function ResumePreview() {
       <div className="error-container">
         <h2>No Resume Data Found</h2>
         <p>Please return to the resume builder to create your resume.</p>
-        <button className="primary-button" onClick={() => navigate('/matchproresumebuilder')}>
+        <button className="primary-button" onClick={() => navigate('/resume-builder')}>
           Go to Resume Builder
         </button>
       </div>
@@ -57,12 +57,23 @@ function ResumePreview() {
       <div className="preview-header">
         <h1>Resume Preview</h1>
         <div className="preview-actions">
-          <button className="edit-button" onClick={() => navigate('/matchproresumebuilder')}>
+          <button className="edit-button" onClick={() => navigate('/resume-builder')}>
+            <span className="icon">✏️</span>
             Edit Resume
           </button>
           <button className="download-button" onClick={handleDownloadPDF}>
+            <span className="icon">📥</span>
             Download PDF
           </button>
+          <a 
+            href="http://localhost:3000" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="job-search-button"
+          >
+            <span className="icon">🔍</span>
+            Find Matching Jobs
+          </a>
         </div>
       </div>
 

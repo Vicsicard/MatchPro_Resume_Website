@@ -48,7 +48,7 @@ function App() {
           
           {/* Main Application Routes */}
           <Route path="/home" element={<MainHomepage />} />
-          <Route path="/matchproresumebuilder" element={<ResumeBuilder />} />
+          <Route path="/resume-builder" element={<ResumeBuilder />} />
           <Route path="/resume-preview" element={<ResumePreview />} />
           <Route path="/job-search" element={<JobSearch />} />
           <Route path="/profile" element={<Profile />} />
