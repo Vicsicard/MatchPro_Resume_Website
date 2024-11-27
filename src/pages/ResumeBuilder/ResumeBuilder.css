@@ -59,18 +59,35 @@
   gap: 1rem;
 }
 
+.preview-button-container {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .preview-button {
-  padding: 0.5rem 1rem;
-  background-color: #2c3e50;
+  background-color: #28a745;
   color: white;
   border: none;
-  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
 }
 
 .preview-button:hover {
-  opacity: 0.9;
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.preview-button:active {
+  transform: translateY(0);
 }
 
 .section-content {
@@ -108,9 +125,9 @@
 
 .item-container {
   margin-bottom: 2rem;
-  padding: 1rem;
-  border: 1px solid #dee2e6;
-  border-radius: 4px;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
 }
 
 .item-header {
@@ -120,28 +137,34 @@
   margin-bottom: 1rem;
 }
 
+.item-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.add-button,
 .remove-button {
-  padding: 0.25rem 0.5rem;
-  background-color: #dc3545;
-  color: white;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .add-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #28a745;
+  background-color: #2c3e50;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
+  margin-top: 1rem;
 }
 
-.icon {
-  font-size: 1.2rem;
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.add-button:hover,
+.remove-button:hover {
+  opacity: 0.9;
 }
 
 .save-button,
@@ -161,4 +184,39 @@
 
 .save-button:hover {
   background-color: #dee2e6;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.navigation-buttons {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.next-button {
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.next-button:hover {
+  background-color: #1e2a37;
+  transform: translateY(-1px);
+}
+
+.next-button:active {
+  transform: translateY(0);
 }

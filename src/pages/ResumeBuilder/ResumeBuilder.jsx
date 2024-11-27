@@ -103,6 +103,11 @@ function ResumeBuilder() {
   const renderSection = () => {
     const { title, fields } = sections[activeSection];
     
+    // Get the next section key
+    const sectionKeys = Object.keys(sections);
+    const currentIndex = sectionKeys.indexOf(activeSection);
+    const nextSection = sectionKeys[currentIndex + 1];
+    
     return (
       <div className="section-content">
         <h2>{title}</h2>
@@ -132,6 +137,27 @@ function ResumeBuilder() {
         ) : (
           renderFields(activeSection, fields)
         )}
+        
+        {/* Navigation Buttons */}
+        <div className="navigation-buttons">
+          {activeSection !== 'skills' && (
+            <button 
+              className="next-button"
+              onClick={() => setActiveSection(nextSection)}
+            >
+              Next: {sections[nextSection].title}
+            </button>
+          )}
+          
+          {/* Show Preview button only in the skills section */}
+          {activeSection === 'skills' && (
+            <div className="preview-button-container">
+              <button className="preview-button" onClick={handlePreview}>
+                Preview Resume
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     );
   };
@@ -158,14 +184,6 @@ function ResumeBuilder() {
         </div>
         
         <div className="main-content">
-          <div className="content-header">
-            <div className="action-buttons">
-              <button className="preview-button" onClick={handlePreview}>
-                Preview Resume
-              </button>
-            </div>
-          </div>
-          
           {renderSection()}
         </div>
       </div>

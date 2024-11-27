@@ -12,6 +12,7 @@ import LandingPage2 from './pages/LandingPage2';
 import LandingPage3 from './pages/LandingPage3';
 import MainHomepage from './pages/MainHomepage';
 import ResumeBuilder from './pages/ResumeBuilder/ResumeBuilder';  
+import ResumePreview from './pages/ResumeBuilder/ResumePreview';
 import JobSearch from './pages/JobSearch';
 import Profile from './pages/Profile';
 import Login from './pages/auth/Login';
@@ -21,14 +22,15 @@ import SignUp from './pages/auth/SignUp';
 const Layout = ({ children }) => {
   const location = useLocation();
   const isLandingPage = ['/landing1', '/landing2', '/landing3'].includes(location.pathname);
+  const isResumePreview = location.pathname === '/resume-preview';
 
   return (
     <div className="app">
-      {!isLandingPage && <Header />}
-      <main className={`main-content ${isLandingPage ? 'landing-page-content' : ''}`}>
+      {!isLandingPage && !isResumePreview && <Header />}
+      <main className={`main-content ${isLandingPage ? 'landing-page-content' : ''} ${isResumePreview ? 'preview-page-content' : ''}`}>
         {children}
       </main>
-      {!isLandingPage && <Footer />}
+      {!isLandingPage && !isResumePreview && <Footer />}
     </div>
   );
 };
@@ -47,6 +49,7 @@ function App() {
           {/* Main Application Routes */}
           <Route path="/home" element={<MainHomepage />} />
           <Route path="/matchproresumebuilder" element={<ResumeBuilder />} />
+          <Route path="/resume-preview" element={<ResumePreview />} />
           <Route path="/job-search" element={<JobSearch />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
