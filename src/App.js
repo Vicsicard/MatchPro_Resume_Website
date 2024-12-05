@@ -41,7 +41,7 @@ function App() {
       <Layout>
         <Routes>
           {/* Landing Pages Flow */}
-          <Route path="/" element={<Navigate to="/landing1" replace />} />
+          <Route path="/" element={<Navigate to="/matchproresumebuilder" replace />} />
           <Route path="/landing1" element={<LandingPage1 />} />
           <Route path="/landing2" element={<LandingPage2 />} />
           <Route path="/landing3" element={<LandingPage3 />} />

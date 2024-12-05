@@ -7,7 +7,10 @@ function extractResumeFeatures(resumeData) {
         skills: new Set(),
         titles: new Set(),
         education: new Set(),
-        experience: []
+        experience: [],
+        jobType: '',
+        location: '',
+        companySize: ''
     };
 
     // Extract skills
@@ -41,6 +44,19 @@ function extractResumeFeatures(resumeData) {
         });
     }
 
+    // Extend resume features to include user preferences
+    if (resumeData.preferences) {
+        if (resumeData.preferences.jobType) {
+            features.jobType = resumeData.preferences.jobType.toLowerCase();
+        }
+        if (resumeData.preferences.location) {
+            features.location = resumeData.preferences.location.toLowerCase();
+        }
+        if (resumeData.preferences.companySize) {
+            features.companySize = resumeData.preferences.companySize.toLowerCase();
+        }
+    }
+
     return features;
 }
 
@@ -69,6 +85,19 @@ function calculateJobMatch(job, resumeFeatures) {
             score += 15;
         }
     });
+
+    // Preference matching
+    if (resumeFeatures.jobType && job.type && job.type.toLowerCase() === resumeFeatures.jobType) {
+        score += 10; // Weight for job type match
+    }
+
+    if (resumeFeatures.location && job.location && job.location.toLowerCase().includes(resumeFeatures.location)) {
+        score += 10; // Weight for location match
+    }
+
+    if (resumeFeatures.companySize && job.companySize && job.companySize.toLowerCase() === resumeFeatures.companySize) {
+        score += 5; // Weight for company size match
+    }
 
     // Experience matching using TF-IDF
     const tfidf = new TfIdf();

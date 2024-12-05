@@ -61,6 +61,21 @@ Landing Page → Resume Builder → Resume Preview
                                     └── Find Matching Jobs → Job Search Results
 ```
 
+## 🔧 Current Status
+
+### Recent Changes
+- **Root Path Navigation:** Updated root path to redirect to `/matchproresumebuilder` instead of `/landing1`.
+- **Removed `trackAPIResponse`:** Temporarily removed from `useMonitoring` hook to resolve an undefined error.
+
+### Current Issues
+- **Redis Caching:** Investigating issues with Redis caching in job search functionality. Cached jobs are not being retrieved as expected.
+
+### Next Steps
+- Continue debugging Redis caching issues.
+- Review and test the updated navigation flow.
+
+This status represents the current state of the project as of December 4, 2023. Updates will be made as new features are implemented and issues are resolved.
+
 ## 🔄 Recent Updates (November 27, 2023)
 1. Dependency Resolution
    - Successfully resolved npm dependency conflicts using --legacy-peer-deps

@@ -1,6 +1,9 @@
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 
+// Assuming logError function and ERROR_TYPES, SEVERITY are defined elsewhere
+const { logError, ERROR_TYPES, SEVERITY } = require('./errorHandler');
+
 async function scrapeJobs(keywords) {
     const browser = await puppeteer.launch({
         headless: 'new',
@@ -41,8 +44,8 @@ async function scrapeJobs(keywords) {
 
         return jobs;
     } catch (error) {
-        console.error('Error scraping jobs:', error);
-        throw error;
+        logError(error, ERROR_TYPES.NETWORK, SEVERITY.HIGH);
+        return [];
     } finally {
         await browser.close();
     }

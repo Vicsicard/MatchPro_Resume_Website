@@ -33,7 +33,7 @@ function SignUp() {
 
       if (signUpError) throw signUpError;
       
-      navigate('/auth/verify-email', { 
+      navigate('/matchproresumebuilder', { 
         state: { email } 
       });
     } catch (err) {

@@ -31,7 +31,7 @@ export function useMonitoring() {
   return {
     trackError: monitoring.logError.bind(monitoring),
     trackMetric: monitoring.trackMetric.bind(monitoring),
-    trackAPIResponse: monitoring.trackAPIResponse.bind(monitoring),
+    trackAPIResponse: undefined,
   };
 }
 
